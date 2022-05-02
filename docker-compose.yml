@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+ 
+  #######################################
+  # Stellar Dashboard
+  #######################################
+  stellar-dashboard:
+    container_name: stellar-dashboard
+    build:
+      context: .
+    ports:
+      - "80:80"
+    environment:
+      REDIS_URL: "redis://redis:6379"
+      PORT: 80
+      UPDATE_DATA: "true"
+    depends_on:
+      - "redis"
+
+  #######################################
+  # Redis
+  #######################################
+  redis:
+    container_name: redis
+    image: redis:latest
+    ports:
+      - "6379:6379"
