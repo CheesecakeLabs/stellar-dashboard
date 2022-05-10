@@ -17,9 +17,6 @@ body.dark-mode {
 }
 
 #root {
-  --pal-white: #ffffff;
-  --pal-black: #000000;
-
   .Layout__inset {
     font-size: var(--font-size-secondary);
   }
